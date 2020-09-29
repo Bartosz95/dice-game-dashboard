@@ -1,0 +1,12 @@
+<h1>{{titleH1}}</h1>
+<p>{{descryption}}</p>
+
+<div *ngFor=" let dice of game?.mug.dices; let i = index">
+  <button (click)="click(i, dice.number)" class="dice {{isChosenClass[i]}}">{{dice?.number}}</button>
+</div>
+<br>
+
+<p>Chosen dices: {{chosenDice.toString()}} </p>
+
+<button (click)="changeDice()">Send Data</button>
+
