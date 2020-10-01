@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+    web-dashboard:
+        container_name: dice-game-dashboard
+        build: .
+        ports:
+            - "4200:4200"
