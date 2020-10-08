@@ -12,12 +12,14 @@ export class GameClientService {
 
   }
 
+  rootURL = '/api/v1/game';
+
   public getGame(): Observable<Game> {
-    return this.httpClient.get<Game>('http://localhost:3000/api/v1/game');
+    return this.httpClient.get<Game>(this.rootURL);
   }
 
   public postRollTheDices(postRequestBody: PostRequestBody): Observable<Game> {
-    return this.httpClient.post<Game>('http://localhost:3000/api/v1/game', postRequestBody);
+    return this.httpClient.post<Game>(this.rootURL, postRequestBody);
   }
 
 }
