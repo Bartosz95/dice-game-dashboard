@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://http://dice-game-api:3000",
+    "target": "",
     "secure": false,
     "logLevel": "debug"
   }
