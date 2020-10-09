@@ -4,7 +4,7 @@ WORKDIR /opt/dice-game/dice-game-dashboard
 COPY . .
 RUN npm install
 RUN npm run-script build
-COPY --from=builder /dist/dice-game-dashboard /usr/share/nginx/html
+COPY --from=builder ./dist/dice-game-dashboard /usr/share/nginx/html
 
 FROM nginx:alpine
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
