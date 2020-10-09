@@ -3,7 +3,10 @@ RUN mkdir -p /opt/dice-game/dice-game-dashboard
 WORKDIR /opt/dice-game/dice-game-dashboard
 COPY . .
 RUN npm install
-RUN npm install -g @angular/cli @angular-devkit/build-angular
-COPY ./nginx.config /etc/nginx/nginx.conf
+RUN npm run-script build
+COPY ./dist/dice-game-dashboard /usr/share/nginx/html
+
+FROM nginx:alpine
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 4200
-CMD ["npm", "start"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
