@@ -12,7 +12,7 @@ export class GameClientService {
 
   }
 
-  rootURL = 'http://dice-game-api:3000/api/v1/game';
+  rootURL = '/api/v1/game';
 
   public getGame(): Observable<Game> {
     return this.httpClient.get<Game>(this.rootURL);
