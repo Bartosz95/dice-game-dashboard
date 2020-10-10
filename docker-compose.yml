@@ -1,7 +1,8 @@
 version: "3.8"
 services:
-    web-dashboard:
+    dice-game-dashboard:
+        hostname: localhost
         container_name: dice-game-dashboard
         build: .
         ports:
-            - "4200:4200"
+            - 4200:4200
