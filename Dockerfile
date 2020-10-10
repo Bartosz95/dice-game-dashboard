@@ -5,7 +5,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-COPY --from=node /opt/dice-game/dice-game-dashboard/dist/dice-game-dashboard /usr/share/nginx/html
+COPY --from=node ./dist/dice-game-dashboard /usr/share/nginx/html
 
 FROM nginx:stable
 COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
