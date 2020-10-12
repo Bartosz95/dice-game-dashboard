@@ -3,7 +3,7 @@ WORKDIR /opt/dice-game/dice-game-dashboard
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build --output-path=./dist/dice-game-dashboard
+RUN npm run build -- --output-path=./dist/dice-game-dashboard
 
 COPY --from=node /opt/dice-game/dice-game-dashboard/dist/dice-game-dashboard /usr/share/nginx/html
 
